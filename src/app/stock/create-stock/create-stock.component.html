@@ -1,0 +1,58 @@
+
+<h1>Create Stock Form</h1>
+
+<div class="form-group">
+  <form (ngSubmit)="createStock(stockForm)" #stockForm="ngForm">
+
+    <div class="stock-name">
+      <input type="text" placeholder="Write Stock Name" required
+      name="stockName" #stockName="ngModel" [(ngModel)]="stock.name">
+    </div>
+    <div *ngIf="stockName.errors && stockName.errors.required">
+      Stock Name is Mandatory(*)
+    </div>
+    <div class="stock-code">
+      <input type="text" placeholder="Write Stock Code" name="stockCode" #stockCode="ngModel" [(ngModel)]="stock.code">
+    </div>
+    <div *ngIf="stockCode.dirty && stockCode.invalid">
+      <div *ngIf="stockCode.errors && stockCode.errors.required">
+        Stock Name is Mandatory(*)
+      </div>
+      <div *ngIf="stockCode.errors && stockCode.errors.minlength">
+        Stock Code must be atleast of length 2
+      </div>
+    </div>
+
+    <div class="stock-price">
+      <input type="number" placeholder="Stock Price" name="stockPrice"
+      #stockPrice="ngModel" [ngModel] = "stock.price"
+      (ngModelChange)="setStockPrice($event)">
+    </div>
+     <div *ngIf="stockPrice.dirty && stockPrice.invalid">
+      <div *ngIf="stockCode.errors && stockCode.errors.required">
+        Stock Name is Mandatory(*)
+      </div>
+    </div>
+    <form class="stock-exchange">
+      <div>
+        <select name="stockExchange"
+          [(ngModel)] ="stock.exchange">
+          <option *ngFor="let exchange of exchanges"
+          [ngValue]="exchange">{{exchange}}
+          </option>
+        </select>
+      </div>
+    </form>
+    <div class="stock-confirm">
+      <input style="cursor: pointer;" type="checkbox" name="stockConfirm"
+      [(ngModel)] ="confirmed">
+      I confirm that the information provided above is accurate!
+    </div>
+    <button style="cursor: pointer;" [disabled]="!confirmed" type="submit">Create</button>
+  </form>
+<h2> Stock Name is {{stock | json}}</h2>
+<h2> Data has been confirm: {{confirmed}}</h2>
+
+
+
+

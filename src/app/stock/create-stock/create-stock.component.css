@@ -1,0 +1,92 @@
+h1{
+  font-weight: bold;
+  line-height: 1.2;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  box-shadow: #333;
+  text-transform: uppercase;
+}
+.stock-name .ng-valid,
+.stock-code .ng-valid,
+.stock-price .ng-valid {
+  background-color: #00FF33;
+  border-radius: 5px;
+}
+
+.stock-name .ng-invalid,
+.stock-code .ng-invalid,
+.stock-price .ng-invalid {
+  background-color: #FF3333;
+}
+
+.stock-name input[type="text"],
+.stock-code input[type="text"],
+.stock-price input[type="number"] {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  padding: 8px;
+  border: 3px solid #333;
+  border-radius: 4px;
+}
+
+input::placeholder {
+  color: #240888;
+}
+.stock-name{
+  margin-bottom: 10px;
+}
+
+.stock-code {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.stock-price {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+
+.stock-exchange select {
+  cursor: pointer;
+  background-color:#FFD966;
+  color: #333;
+  font-size: 16px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  text-transform: uppercase;
+}
+
+.stock-exchange option {
+  background-color: #fff;
+  color: #333;
+  font-size: 16px;
+  padding: 10px;
+}
+
+.stock-confirm{
+  font-weight: bold;
+}
+
+button {
+  margin-top: 5px;
+  border-radius: 50px;
+  background-color: rgb(20, 184, 72);
+  box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+  letter-spacing: 1.5px;
+  text-transform:inherit;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all .5s ease;
+  cursor: pointer;
+}
+
+button:hover{
+  background-color: rgb(20, 184, 72);
+  color: hsl(0, 0%, 100%);
+  box-shadow: rgb(14, 2, 37) 0px 7px 29px 0px;
+}
